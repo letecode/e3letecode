@@ -9,8 +9,18 @@ body {
 }
 
 .container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 40px;
+}
+
+.drawer {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 9999;
+    display: none;
 }
 
 .section {
@@ -31,12 +41,27 @@ body {
     border-radius: 7px;
 }
 
+.menu-toggle {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+}
+
 .btn.link {
     text-decoration: none;
 }
 
-.al-center {
-    text-align: center;
+.al-position {
+    text-align: start;
+    margin-bottom: 40px;
+}
+
+@media screen and (min-width: 567px) {
+    .al-position {
+        text-align: center;
+    }
 }
 
 p {
@@ -68,7 +93,7 @@ p {
 }
 
 .navigation .menu {
-    display: flex;
+    display: none;
     align-items: center;
 }
 .navigation .menu-item {
@@ -93,14 +118,47 @@ p {
 .section.learn .container {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .section.learn img {
-    width: 400px;
+    width: 150px;
+}
+
+@media screen and (min-width: 768px) {
+    .section.learn .container {
+        flex-direction: row;
+    }
+
+    .section.learn img {
+        width: 400px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .navigation .menu {
+        display: flex;
+    }
 }
 
 .section.learn .bloc-item {
     width: 50%;
+}
+
+/* cours */
+.cours-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cours-list .cours-item {
+    width: 33%;
+}
+
+.cours-list .cours-item img {
+    width: 100%;
 }
 
 footer {
@@ -108,3 +166,4 @@ footer {
     color: #fff;
     padding: 50px 0;
 }
+
